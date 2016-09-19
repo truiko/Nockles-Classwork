@@ -7,5 +7,4 @@ public class DataTypes {
 	    int n = 7;
 	    System.out.println("m/n is "+((double)m/n));
 	}
-
 }
