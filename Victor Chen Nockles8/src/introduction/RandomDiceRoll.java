@@ -7,7 +7,7 @@ public class RandomDiceRoll {
 		System.out.println(results[0]);
 		// declare variable, logic test, and increment
 		for(int index = 0; index < 10; index++){
-			int result = rollFairDie();
+			int result = rollUnfairDie();
 			System.out.println("Roll #" + (index + 1) + ": " + result);
 			results[result-1] ++;
 		}
@@ -26,27 +26,24 @@ public class RandomDiceRoll {
 		return roll;
 	}
 	
-	/*public static int rollUnfairDie(){
+	public static int rollUnfairDie(){
 		double rand = Math.random();
 		int roll = (int) (6*rand);
+		roll++;
 		double unfair = Math.random();
 		boolean fair = false;
-		
-		if(unfair >= .5){
+		System.out.println(fair);
+		if(unfair >= .50){
 			fair = false;
 		}
 		else{
 			fair = true;
 		}
-		if(fair == false){
-			if(roll < 3)
-			{
-				return roll++;
-			}
+		if(fair == false && roll < 3){
+			return roll++;
 		}
-		System.out.println(fair);
 		return roll;
 	}
-	*/
+	
 		 
 }
