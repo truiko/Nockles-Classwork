@@ -7,7 +7,7 @@ public class CardDraw {
 		String[] suits = {"Spades", "Diamonds", "Hearts", "Clubs"};
 		int value = (int) Math.random()*values.length;
 		int suit = (int) Math.random()*suits.length;
-		System.out.println(values[value] + "of " + suits[suit]);
+		System.out.println(values[value] + " of " + suits[suit]);
 
 	}
 
