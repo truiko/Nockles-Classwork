@@ -2,7 +2,7 @@ package introduction;
 
 import java.util.Scanner;
 
-public class StringPractice {
+public class StringPractice2 {
 	static Scanner input;
 	static String user;
 
@@ -58,31 +58,35 @@ public class StringPractice {
 		
 	}
 	public static void print(String s){
-		String printString = "";
-		int cutoff = 35;
-		// check for words to add
-		// in other words, s had a length > 0
-		while(s.length() > 0){
-			String cut = "";
-			String nextWord = "";
-			// check to see if the next word will fit on the line
-			// and there must still be words to add
-			while(cut.length() + nextWord.length() < cutoff && s.length() > 0){
-				// add the next word to the line
-				cut += nextWord;
-				s = s.substring(nextWord.length());
-				
-				// identify the following word without the space
-				int endOfWord = s.indexOf(" ");
-				// if there are no more spaces
-				// this is the last word, so add the whole thing
-				if(endOfWord == -1){
-					endOfWord = s.length() - 1; // -1 for index
-				}
-				nextWord = s.substring(0, endOfWord + 1);
+		String printString = s;
+		int cutoff = 10;
+		if(printString.length() > cutoff)
+		{
+			for(int i = 0; i*cutoff < s.length(); i++){
+				// append '+='
+				printString += getCut(s, cutoff, i+1)+"\n";
 			}
-			printString += cut + "\n";
 		}
 		System.out.println(printString);
+	}
+	
+	private static String getCut(String s, int cutoff, int cut){	
+		int cutIndex = cut * cutoff;
+		if(cutIndex > s.length()){
+			cutIndex = s.length();
+		}
+		String currentCut = s.substring(0,cutIndex);
+		int indexOfLastSpace = currentCut.length() - 1;
+		// start at last index, go backwards
+		for(int i = currentCut.length() - 1; i >= 0; i--){
+			String letter = currentCut.substring(i, i+1);
+			if(letter.equals("")){
+				indexOfLastSpace = i;
+				break;
+			}
+		}
+		// shorten the cut to end on a space
+		currentCut = currentCut.substring(0, indexOfLastSpace);
+		return currentCut;
 	}
 }
