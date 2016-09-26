@@ -67,6 +67,13 @@ public class VictorMain {
 			if(position + keyword.length() < searchString.length()){
 				after = searchString.substring(position + keyword.length(), position + 				keyword.length() + 1);
 			}
+			if(before.compareTo("a") < 0 && after.compareTo("a") < 0){
+				return position;
+			}
+			else{
+				// position + 1 is one space after our current position, so this finds the next 				word
+				position = searchString.indexOf(keyword, position + 1);
+			}
 		}
 		return -1;
 	}
