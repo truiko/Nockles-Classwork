@@ -53,6 +53,21 @@ public class VictorMain {
 		// make lower case
 		searchString = searchString.toLowerCase();
 		keyword = keyword.toLowerCase();
+		// first position of key word
+		int position = searchString.indexOf(0);
+		while(position >= 0){
+			// assume preceeded and followed by space
+			String before = " ";
+			String after = " ";
+			// check character in front if it exists
+			if(position > 0){
+				before = searchString.substring(position - 1, position);
+			}
+			// check if there is a character after the keyword
+			if(position + keyword.length() < searchString.length()){
+				after = searchString.substring(position + keyword.length(), position + 				keyword.length() + 1);
+			}
+		}
 		return -1;
 	}
 
