@@ -53,8 +53,11 @@ public class VictorMain {
 		// make lower case
 		searchString = searchString.toLowerCase();
 		keyword = keyword.toLowerCase();
+		System.out.println("The phrase is " + searchString);
+		System.out.println("The keyword is " + keyword);
 		// first position of key word
-		int position = searchString.indexOf(0);
+		int position = searchString.indexOf(keyword);
+		System.out.println("The keyword was found at "+ position);
 		while(position >= 0){
 			// assume preceeded and followed by space
 			String before = " ";
@@ -62,20 +65,58 @@ public class VictorMain {
 			// check character in front if it exists
 			if(position > 0){
 				before = searchString.substring(position - 1, position);
+				System.out.println("The character before is " + before);
 			}
 			// check if there is a character after the keyword
 			if(position + keyword.length() < searchString.length()){
-				after = searchString.substring(position + keyword.length(), position + 				keyword.length() + 1);
+				after = searchString.substring(position + keyword.length(), position +
+						keyword.length() + 1);
+				System.out.println("The character after is " + after);
 			}
-			if(before.compareTo("a") < 0 && after.compareTo("a") < 0){
+			if(before.compareTo("a") < 0 && after.compareTo("a") < 0 && noNegations(searchString, position)){
+				System.out.println("Found " + keyword + " at " + position );
 				return position;
 			}
 			else{
-				// position + 1 is one space after our current position, so this finds the next 				word
+				// position + 1 is one space after our current position,
+				// so this finds the next word
 				position = searchString.indexOf(keyword, position + 1);
+				System.out.println("Did not find " + keyword + ", checking position " 
+				+ position );
 			}
 		}
 		return -1;
+	}
+	/**
+	 * This is a helper method. A helper method is a method designed for "helping"
+	 * a larger method . Because of this, helper methods are generally private because they are
+	 * only used by the methods they are helping ALSO, when you do your project, 
+	 * I expect to see helper methods because they make the code more READABLE
+	 * @param searchString (always lowercase)
+	 * @param position
+	 * @return "true" if there is no negation words
+	 * in front of position
+	 */
+	private static boolean noNegations(String searchString, int position) {
+		// check to see if the word "no" is in front of position
+		// check to see if there are 3 spaces in front
+		// then check to see if "no" is there
+		if(position - 3 >= 0 && searchString.substring(position - 3, position).equals("no ")){
+			return false;
+		}
+		// check for not
+		if(position - 4 >= 0 && searchString.substring(position - 4, position).equals("not ")){
+			return false;
+		}
+		// check for never
+		if(position - 6 >= 0 && searchString.substring(position - 6, position).equals("never  			")){
+			return false;
+		}
+		// check for n't
+		if(position - 4 >= 0 && searchString.substring(position - 4, position).equals("n't ")){
+			return false;
+		}
+		return true;
 	}
 
 	public static String promptInput() {
