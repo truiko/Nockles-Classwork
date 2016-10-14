@@ -16,4 +16,17 @@ public class VictorSchool implements Chatbot{
 			VictorMain.print("That's my favorite part about school");
 		}
 	}
+	public boolean isTriggered(String userInput) {
+		String[] triggers = {"school", "class", "teacher"};
+		// idea: create a for loop to iterate through your array of triggers
+		
+		if(VictorMain.findKeyword(userInput, "school", 0) >= 0){
+			return true;
+		}
+		if(VictorMain.findKeyword(userInput, "class", 0) >= 0){
+			return true;
+		}
+		return false;
+	}
+	
 }
