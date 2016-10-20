@@ -17,7 +17,7 @@ public class Quiz1 {
 	// 1 point correct method
 	public static void main(String[] args){
 		// 1 point for asking username once
-		if(corrrectUser()){
+		if(correctUser()){
 			askPassword();
 		}else{
 			System.out.println("Unknown username, please contact the network adminstrator");
@@ -27,6 +27,7 @@ public class Quiz1 {
 	private static void askPassword() {
 		boolean inLoop = true;
 		int triesRemaining = 3;
+		// 1 point for using while loop
 		while(inLoop){
 			System.out.println("Enter your password.");
 			// 1 point use waitForEntry() correctly
@@ -51,7 +52,7 @@ public class Quiz1 {
 		
 	}
 
-	private static boolean corrrectUser() {
+	private static boolean correctUser() {
 		System.out.println("Enter a username.");
 		// 1 point comparing Strings
 		return waitForEntry().equals(username);
