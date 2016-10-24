@@ -1,7 +1,8 @@
 package arrays;
 
 
-public class ArrayMethods{
+
+public class ArrayMethods {
 
     public static void main(String[] args) {
     
@@ -21,6 +22,11 @@ public class ArrayMethods{
      * int corresponding to the index of a key, if it is in the array
      * if the key is not in the array, this method returns -1
      * */
+     for(int i = 0; i < arrayToSearch.length; i++){
+         if(arrayToSearch[i] == key){
+             return i;
+         }
+     }
      return -1;
     }
     
@@ -32,6 +38,11 @@ public class ArrayMethods{
      * 
      * Note: You should attempt to write a method that is more efficient that searchUnsorted
      * */
+     for(int i = 0; i < sortedArrayToSearch.length; i++){
+         if(sortedArrayToSearch[i] == key){
+             return i;
+         }
+     }
      return -1;
     }
     
@@ -39,7 +50,14 @@ public class ArrayMethods{
         /**
          * This method takes an in array as a parameter and returns 'true' if the array is already sorted in DESCENDING order
          * */
-        return false;
+         for(int i = 1; i < array.length; i++){
+             if(i!= array.length){
+                 if(array[i] > array[i-1]){
+                    return false;
+                 }
+             }
+         }
+        return true;
     }
     
     
@@ -55,6 +73,37 @@ public class ArrayMethods{
          * index 5 = the number of values below the mean
          * */
          double[] stats = new double[6];
+/**
+         double total = 0;
+         int largest = array[0];
+         int smallest = array[0];
+         
+         for(int i = 0; i < array.length; i++){
+             total + array[i];
+             if(array[i] > largest){
+                 largest = array[i];
+             }
+             if(array[i] < smallest){
+                 smallest = array[i];
+             }
+         }
+         
+         double mean = total/array.length;
+         int greater = 0;
+         int lesser = 0;
+         for(int i = 0; i < array.length; i++){
+             if(array[i] >= mean){
+                 greater + 1;
+             }else{
+                 lesser + 1;
+             }
+         }
+         stats[0] = mean;
+         stats[1] = largest;
+         stats[2] = smallest;
+         stats[4] = greater;
+         stats[5] = lesser;
+        **/
          return stats;
     }
     
@@ -84,11 +133,17 @@ public class ArrayMethods{
          * countDifferences({1,2,3},{1,3,2}) returns 2, since '2' and '3' are both present, but different locations
          * 
          * */
-         return 0;
+         int difference = 0;
+         for(int i = 0; i < array1.length; i++){
+             if(array1[i] != array2[i]){
+                 difference++;
+             }
+         }
+         return difference;
     }
     
 
-    public static int longestConsecutiveSequence(int[] array1){
+    public static int longestConsecutiveSequence(int[] array){
         /**This method counts the longest consequtive sequence in an array.
          * It does not matter where the sequence begins
          * If there are no consecutive numbers, the method should return '1'
@@ -98,8 +153,31 @@ public class ArrayMethods{
          * longestSequence({0,9,10,11,4,3,8,9}) returns '3', since '9,10,11' is 3 integers long
          * longestSequence({0,9,8,11,4,3,7,9}) returns '1', since there are no consecutive integers
          * */
+        int consecutive = 1;
+    	int largestConsecutive = 0;
         
-        return 0;
+        for(int i = 0; i < array.length; i++){
+        	if(i == array.length - 1){
+        		if(consecutive >= largestConsecutive){
+            		largestConsecutive = consecutive;
+            	}
+        		break;
+        	}
+            int current = array[i];
+            int next = array[i + 1];
+            if(next == current + 1){
+                consecutive ++;
+            }else{
+            	if(consecutive >= largestConsecutive){
+            		largestConsecutive = consecutive;
+            	}
+                consecutive = 1;
+            }
+        }
+        if(largestConsecutive > 0){
+            return largestConsecutive;
+        }
+        return 1;
     }
 
     public static int longestSharedSequence(int[] array1, int[] array2){
