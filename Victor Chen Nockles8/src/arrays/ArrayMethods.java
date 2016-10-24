@@ -14,6 +14,30 @@ public class ArrayMethods {
       * DO NOT spend hours and hours trying to fix perfect code just because my test
       * says that it isn't perfect!
       * */
+    	int[] array = {1,2,3};
+    	System.out.println(reverseOrder(array));
+    }
+    
+    public static int[] reverseOrder(int[] array){
+        /**
+         * this method reverses the order of the array passed to it.
+         * Not that this method does not have a return type. You do not need to copy the array first
+         * Furthermore, note that the array is not necessarily in any *particular* order. It may be 
+         * in a random order, though you still need to reverse whatever order it is in
+         * 
+         * Example:
+         * array = {5, 1, 9, 10, 16, -6}
+         * after calling this method
+         * array = {-6, 16, 10, 9, 1, 5}
+         * 
+         * */
+    	for(int i = 0; i < array.length; i++){
+            int index = array.length - 1;
+            int temp = array[index - i];
+            array[index - i] = array[i];
+            array[i] = temp;
+        }
+    	return array;
     }
     
     public static int searchUnsorted(int[] arrayToSearch, int key){
@@ -106,21 +130,7 @@ public class ArrayMethods {
         **/
          return stats;
     }
-    
-    public static void reverseOrder(int[] array){
-        /**
-         * this method reverses the order of the array passed to it.
-         * Not that this method does not have a return type. You do not need to copy the array first
-         * Furthermore, note that the array is not necessarily in any *particular* order. It may be 
-         * in a random order, though you still need to reverse whatever order it is in
-         * 
-         * Example:
-         * array = {5, 1, 9, 10, 16, -6}
-         * after calling this method
-         * array = {-6, 16, 10, 9, 1, 5}
-         * 
-         * */
-    }
+
     
     public static int countDifferences(int[] array1, int[] array2){
         /**Here, you will write an method that returns the number of values in two arrays 

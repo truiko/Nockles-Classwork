@@ -16,8 +16,38 @@ public class AdvancedArrayMethods {
 		}
 		
 	}
+	
+	public static int longestSharedSequence(int[] array1, int[] array2){
+		int max = 0;
+		int count = 0;
+		for(int seqStart = 0; seqStart < array1.length; seqStart++){
+			int seqEnd = seqStart;
+			int[] seq = getSequence(seqStart, seqEnd, array1);
+			if(checkSequence(seq, array2)){
+				count++;
+				if(count > max){
+					max = count;
+				}
+			}
+			// reset count after every sequence has been checked
+			count = 0;
+		}
+		return max;
+	}
+	
+	// returns true if seq is found inside array2
+	private static boolean checkSequence(int[] seq, int[] array2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 
+	// returns a sub-array containing the elements
+	// in array 1 from seqStart to seqEnd
+	private static int[] getSequence(int seqStart, int seqEnd, int[] array1) {
+		return null;
+
+	}
 	private static void swap(Object[] array, int a, int b) {
 		Object placeHolder = array[a];
 		array[b] = array[a];
