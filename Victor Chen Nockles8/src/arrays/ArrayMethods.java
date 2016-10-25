@@ -1,6 +1,6 @@
 package arrays;
 
-
+import java.util.Arrays;
 
 public class ArrayMethods {
 
@@ -14,8 +14,28 @@ public class ArrayMethods {
       * DO NOT spend hours and hours trying to fix perfect code just because my test
       * says that it isn't perfect!
       * */
-    	int[] array = {1,2,3};
-    	System.out.println(reverseOrder(array));
+    	System.out.println(Arrays.toString(generateDistinctItemsList(5)));
+    }
+    
+    public static int[] generateDistinctItemsList(int n){
+        /**
+         * This method needs to generate an int[] of length n that contains distinct, random integers
+         * between 1 and 2n 
+         * The method will be tested by verifying that the array you return is n items long,
+         * contains only entries between 1 and 2n (inclusive) and has no duplicates
+         * 
+         * */
+        int[] array = new int[n];
+        for(int i = 0; i < array.length; i++){
+        	boolean same = true;
+        	while(same){
+        		int random = (int) (Math.random()*(2*n)) + 1;
+        		for(int j = 0; j < i; j ++){
+        			
+        		}
+        	}
+        }
+        return array; 
     }
     
     public static int[] reverseOrder(int[] array){
@@ -203,17 +223,6 @@ public class ArrayMethods {
          * */
         
         return 0;
-    }
-
-    public static int[] generateDistinctItemsList(int n){
-        /**
-         * This method needs to generate an int[] of length n that contains distinct, random integers
-         * between 1 and 2n 
-         * The method will be tested by verifying that the array you return is n items long,
-         * contains only entries between 1 and 2n (inclusive) and has no duplicates
-         * 
-         * */
-        return null; 
     }
     
     
