@@ -14,7 +14,7 @@ public class ArrayMethods {
       * DO NOT spend hours and hours trying to fix perfect code just because my test
       * says that it isn't perfect!
       * */
-    	System.out.println(Arrays.toString(generateDistinctItemsList(5)));
+    	System.out.println(Arrays.toString(generateDistinctItemsList(2)));
     }
     
     public static int[] generateDistinctItemsList(int n){
@@ -31,8 +31,15 @@ public class ArrayMethods {
         	while(same){
         		int random = (int) (Math.random()*(2*n)) + 1;
         		for(int j = 0; j < i; j ++){
-        			
+        			if(array[j] == random){
+        				break;
+        			}else{
+        				if(j == i - 1){
+        					same = false;
+        				}
+        			}
         		}
+        		array[i] = random;
         	}
         }
         return array; 
