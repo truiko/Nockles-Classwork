@@ -36,8 +36,22 @@ public class AdvancedArrayMethods {
 	}
 	
 	// returns true if seq is found inside array2
-	private static boolean checkSequence(int[] seq, int[] array2) {
-		// TODO Auto-generated method stub
+	private static boolean checkSequence(int[] seq, int[] arr) {
+		// i checks every value in arr
+	A:	for(int i = 0; i < arr.length; i++){
+			// j checks every element in seq
+	B:		for(int j = 0; j < seq.length; j++){
+				if(j + i < arr.length && seq[j] != arr[j+1]){
+					// breaks out of innermost for loop unless particular for loop is 
+					// specified (labels "A:") break A: break B:
+					break;
+				}else{
+					if(j == seq.length - 1){
+						return true;
+					}
+				}
+			}
+		}
 		return false;
 	}
 
