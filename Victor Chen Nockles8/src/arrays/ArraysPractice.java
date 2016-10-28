@@ -47,8 +47,8 @@ public class ArraysPractice {
 				}
 			}
 		}
-		// print the primess
-		System.out.print("\n The primes are:");
+		// print the primes
+		System.out.print("\nThe primes are : ");
 		for(int index = 0; index < numbers.length; index++){
 			if(numbers[index]){
 				System.out.print(index + ", ");
