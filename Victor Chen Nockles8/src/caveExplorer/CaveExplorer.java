@@ -7,7 +7,7 @@ public class CaveExplorer {
 	public static CaveRoomPd8[][] caves;
 	public static Scanner in ;
 	public static CaveRoomPd8 currentRoom;
-	public static InventoryNockles inventory;
+	public static Inventory inventory;
 	
 	public static void main(String[] args){
 		in = new Scanner(System.in);
@@ -20,8 +20,8 @@ public class CaveExplorer {
 		}
 		currentRoom = caves[1][2];
 		currentRoom.enter();
-		caves[1][2].setConnection(caves[1][2]);
-		caves[1][2].setConnection(caves[2][2]);
-		caves[1][2].setConnection(caves[1][3]);
+		caves[1][2].setConnection(CaveRoomPd8.WEST,caves[1][2], new Door());
+		caves[1][2].setConnection(CaveRoomPd8.SOUTH,caves[2][2], new Door());
+		caves[1][2].setConnection(CaveRoomPd8.EAST,caves[1][3], new Door());
 	}
 }
