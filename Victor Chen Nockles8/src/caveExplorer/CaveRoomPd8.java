@@ -40,11 +40,16 @@ public class CaveRoomPd8 {
 		}else{
 			for(int dir = 0; dir < doors.length; dir++){
 				if(doors[dir] != null){
-					directions += "\n   There is a "+doors[dir].getDescription()+" to "+toDirection(dir)+". "+doors[dir].getDetails();
+					directions += "\n   There is a "+doors[dir].getDescription()+" to "+ toDirection(dir)+". "+doors[dir].getDetails();
 				}
 			}
 		}
 	
+	}
+
+	private String toDirection(int dir) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public String getContents(){
