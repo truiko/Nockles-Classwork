@@ -1,16 +1,125 @@
 package caveExplorer;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class TwoDArraysIntro {
 
+	public static Scanner in = new Scanner(System.in);
+	static String[][] arr2D;
+	static String[][] pic;
+	static int starti;
+	static int startj;
+	static int treasurei;
+	static int treasurej;
+	
 	public static void main(String[] args) {	
-		boolean[][] mines = new boolean[6][6];
+		arr2D = new String[5][5];
+		pic = new String[5][5];
+		for(int row = 0; row < arr2D.length; row++){
+			// populate with coordinates
+			for(int col = 0; col < arr2D[row].length; col++){
+				arr2D[row][col] = "("+row + ", " + col+")";
+			}
+		}
+		starti = 2;
+		startj = 2;
+		treasurei = 4;
+		treasurej = 3;
+		startExploring();
+		
+	}
+	 
+	private static void startExploring() {
+		while(true){
+			pic[starti][startj] = "X";
+			printPic(pic);
+			System.out.println("You are in room "+ arr2D[starti][startj] + ".");
+			if(starti == treasurei && startj == treasurej){
+				break;
+			}
+			System.out.println("What do you want to do?");
+			String input = in.nextLine();
+			int[] newCoordinates = interpretInput(input);
+			starti = newCoordinates[0];
+			startj = newCoordinates[1];
+		}
+		System.out.println("You win!");
+		
+	}
+
+	private static int[] interpretInput(String input) {
+		// verify input is valid
+		while(!isValid(input)){
+			System.out.println("Sorry, in this game, you can only us the w, a, s, d controls");
+			System.out.println("Tell me again what you would like to do.");
+			input = in.nextLine();
+		}
+		
+		int currenti = starti;
+		int currentj = startj;
+		input = input.toLowerCase();
+		if(input.equals("w")){
+			currenti --;
+		}
+		if(input.equals("s")){
+			currenti ++;
+		}
+		if(input.equals("a")){
+			currentj --;
+		}
+		if(input.equals("d")){
+			currentj ++;
+		}
+		int[] newCoordinates = {starti,startj};
+		if(currenti >=0 && currenti < arr2D.length && currentj >= 0 && currentj < 		arr2D[0].length){
+			newCoordinates[0] = currenti;
+			newCoordinates[1] = currentj;
+		}else{
+			System.out.println("Sorry, you have reached the edge of the known universe"
+					+ ". you may go no farther in that direction");
+		}
+		
+		return newCoordinates;
+	}
+
+	private static boolean isValid(String input) {
+		String[] validKeys = {"w","a","s","d"};
+		for(String key:validKeys){
+			if(input.toLowerCase().equals(key)){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static void printHomeWorkMap(){
+		String[][] map = new String[15][10];
+		printMap(map);
+		printPic(map);
+	}
+    private static void printMap(String[][] map) {
+    	for(int row = 0; row < map.length; row++){
+			for(int col = 0; col < map[row].length; col++){
+				if(col == 0 || col == map[row].length - 1){
+					map[row][col] = "__";
+				}else{
+					if(map[row].length % col == 0){
+						map[row][col] = "|";
+					}
+				}
+				
+			}
+		}
+		
+	}
+
+	public static void mineSweeper(){
+		 boolean[][] mines = new boolean[6][6];
 		plantMines(mines);
 		String[][] field = createField(mines);
 		printPic(field);
-	}
-	
+	 }
 	private static String[][] createField(boolean[][] mines) {
 		String[][] field = new String[mines.length][mines[0].length];
 		for(int row = 0; row < field.length; row++){
@@ -22,7 +131,7 @@ public class TwoDArraysIntro {
 				}
 			}
 		}
-		return null;
+		return field;
 	}
 
 	private static String countNearby(boolean[][] mines, int row, int col) {
