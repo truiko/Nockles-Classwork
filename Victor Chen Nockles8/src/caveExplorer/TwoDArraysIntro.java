@@ -30,13 +30,11 @@ public class TwoDArraysIntro {
 		String[][] newPic = new String[17][13]; 
 
 		for(int row = 0;row<newPic.length;row++){
-
 			for(int col = 0;col<newPic[0].length;col++){
-
-				if(row%4==0){
+				if(row %4 ==0){
 					newPic[row][col] = "_";
 				}
-				else if(col%3==0){
+				else if(col % 3==0){
 					newPic[row][col] = "|";
 				}else{
 					newPic[row][col] = " ";
