@@ -26,15 +26,40 @@ public class TwoDArraysIntro {
 	}
 
 	private static String countNearby(boolean[][] mines, int row, int col) {
-		for(int r = row - 1; r < row + 1; r++){
-			for(int c = col - 1; c < col + 1; c++){
-				// check that this element exists
-				if(r <= 0 && r < mines.length && c <= 0 && c < mines[0].length){
-					
-				}
-			}
+//		for(int r = row - 1; r < row + 1; r++){
+//			for(int c = col - 1; c < col + 1; c++){
+//				// check that this element exists
+//				if(r <= 0 && r < mines.length && c <= 0 && c < mines[0].length){
+//					
+//				}
+//			}
+//		}
+		// this method only considers actual elements
+//		int count = 0;
+//		for(int r = 0; r < mines.length; r++){
+//			for(int c = 0; c < mines[r].length; c++){
+//				if(Math.abs(r-row) + Math.abs(c-col) == 1 && mines[r][c]){
+//					count++;
+//				}
+//			}
+//		}
+//		return "" + count;
+		// this method allows you to be most specific
+		// for example, you only want north and east
+		int count = 0;
+		count += isValidAndTrue(mines, row - 1, col);
+		count += isValidAndTrue(mines, row + 1, col);
+		count += isValidAndTrue(mines, row, col-1);
+		count += isValidAndTrue(mines, row, col+1);
+		
+		return "" + count;
+	}
+
+	private static int isValidAndTrue(boolean[][] mines, int i, int j) {
+		if(i >= 0 && i < mines.length && j <= 0 && j > mines[0].length && mines[i][j]){
+			return 1;
 		}
-		return null;
+		return 0;
 	}
 
 	private static void plantMines(boolean[][] mines) {
