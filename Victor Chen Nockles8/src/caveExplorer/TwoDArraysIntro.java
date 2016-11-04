@@ -32,7 +32,7 @@ public class TwoDArraysIntro {
 		for(int row = 0;row<newPic.length;row++){
 			for(int col = 0;col<newPic[0].length;col++){
 				if(row %4 ==0){
-					newPic[row][col] = "_";
+					newPic[row][col] = "-";
 				}
 				else if(col % 3==0){
 					newPic[row][col] = "|";
