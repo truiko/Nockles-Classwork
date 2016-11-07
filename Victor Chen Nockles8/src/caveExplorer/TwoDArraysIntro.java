@@ -27,6 +27,68 @@ public class TwoDArraysIntro {
 //		treasurei = 4;
 //		treasurej = 3;
 //		startExploring();
+//		String[][] newPic = new String[8][8];
+//		
+//		populate(newPic);
+//		for(int row = 0;row<newPic.length;row++){
+//			for(int col = 0;col<newPic[0].length;col++){
+//				if(row == 0){
+//					newPic[0][col] = "" + col;
+//				}
+//				String input = in.nextLine();
+//				while(!isValid(input)){
+//					System.out.println("Sorry, in this game, you can only us the 0,1,2,3,4,5,6,7 controls");
+//					System.out.println("Tell me again what you would like to do.");
+//					input = in.nextLine();
+//				}
+//				input = input.toLowerCase();
+//				if(input.equals("0")){
+//					checkStack(0,newPic);
+//				}
+//				if(input.equals("1")){
+//					newPic[newPic.length][1] = "O";
+//				}
+//				if(input.equals("2")){
+//					newPic[newPic.length][2] = "O";
+//				}
+//				if(input.equals("3")){
+//					newPic[newPic.length][3] = "O";
+//				}
+//				if(input.equals("4")){
+//					newPic[newPic.length][4] = "O";
+//				}
+//				if(input.equals("5")){
+//					newPic[newPic.length][5] = "O";
+//				}
+//				if(input.equals("6")){
+//					newPic[newPic.length][6] = "O";
+//				}
+//				if(input.equals("7")){
+//					newPic[newPic.length][7] = "O";
+//				}
+//				
+//			}
+//		}
+//		printPic(newPic);
+		hw();
+	}
+
+	private static void checkStack(int i , String[][] newPic) {
+		for(int row = newPic.length - 1; row > 0; row++){
+			
+		}
+	}
+
+	private static void populate(String[][] newPic) {
+		for(int row = 0; row < newPic.length; row++){
+			for(int col = 0; col < newPic[row].length; col++){
+				newPic[row][col] = "";
+			}
+		}
+		
+	}
+
+	public static void hw(){
 		String[][] newPic = new String[17][13]; 
 
 		for(int row = 0;row<newPic.length;row++){
@@ -43,7 +105,7 @@ public class TwoDArraysIntro {
 		}
 		printPic(newPic);
 	}
-	 
+	
 	private static void startExploring() {
 		while(true){
 			pic[starti][startj] = "X";

@@ -4,6 +4,7 @@ public class InventoryNockles {
 
 	private boolean hasMap;
 	private String map;
+	
 	public InventoryNockles() {
 		hasMap = true;
 		updateMap();
