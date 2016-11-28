@@ -7,29 +7,30 @@ public class Pokemon {
 	private boolean poisoned;
 	
 	public Pokemon(String name, int level){
-		name = "";
-		level = 0;
 		hp = 100;
-		poisoned = false;
+		this.name = name;
+		this.level = 0;
+		this.poisoned = false;
 	}
+	
 	public void iChooseYou(String name){
 		System.out.println(name + "\n" + name);
 	}
 	
 	public int getHP(){
-		return 0;
+		return hp;
 	}
 	
 	public String getName(){
-		return null;
+		return name;
 	}
 	
 	public void setHP(int newHP){
-		
+		hp = newHP;
 	}
 	
 	public void setPoisoned(boolean b){
-		
+		poisoned = true;
 	}
 	
 	public void lapse(){
