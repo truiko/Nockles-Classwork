@@ -16,6 +16,7 @@ public class GameStartEvent implements Playable {
 	@Override
 	public void play() {
 		readSequence(SEQUENCE_1);
+		System.out.println("Come on. Tell me you like puzzles.");
 		while(CaveExplorer.in.nextLine().toLowerCase().indexOf("yes") > 0 ){
 			CaveExplorer.print("C'mon! You know you like puzzles. Say yes!!");
 		}
