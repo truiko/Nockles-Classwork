@@ -14,7 +14,7 @@ public class Pokemon {
 	}
 	
 	public void iChooseYou(String name){
-		System.out.println(name + "\n" + name);
+		System.out.println(name + "," + name + "!");
 	}
 	
 	public int getHP(){
@@ -30,7 +30,7 @@ public class Pokemon {
 	}
 	
 	public void setPoisoned(boolean b){
-		poisoned = true;
+		poisoned = b;
 	}
 	
 	public void lapse(){
