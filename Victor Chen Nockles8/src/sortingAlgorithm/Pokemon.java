@@ -22,7 +22,7 @@ public class Pokemon {
 		}
 	}
 	
-	public void iChooseYou(String name){
+	public void iChooseYou(){
 		System.out.println(name + "," + name + "!");
 	}
 	
