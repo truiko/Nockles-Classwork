@@ -23,7 +23,7 @@ public class Pokemon {
 	}
 	
 	public void iChooseYou(){
-		System.out.println(name + "," + name + "!");
+		System.out.println("I choose you, "+ name + "! " + name + "!");
 	}
 	
 	public int getHP(){
