@@ -12,13 +12,12 @@ public class CoordinateScreen extends Screen {
 	
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
-		label = new TextLabel(40,45,width-80,40,"");
 	}
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		// TODO Auto-generated method stub
-		
+		label = new TextLabel(40,45,760,40,"Text");
+		viewObjects.add(label);
 	}
 
 }
