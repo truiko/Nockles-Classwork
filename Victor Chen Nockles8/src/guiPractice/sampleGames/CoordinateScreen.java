@@ -16,7 +16,7 @@ public class CoordinateScreen extends Screen {
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		label = new TextLabel(40,45,760,40,"Text");
+		label = new TextLabel(40,45,760,40,"Sample Text");
 		viewObjects.add(label);
 	}
 
