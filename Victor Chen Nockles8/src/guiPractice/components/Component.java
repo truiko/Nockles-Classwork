@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
 public abstract class Component implements Visible {
-	
+
 	//FIELDS
 	private int x;
 	private int y;
@@ -18,9 +18,11 @@ public abstract class Component implements Visible {
 		this.y = y;
 		this.w = w;
 		this.h = h;
-		image = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
+		image = new BufferedImage(w,h,
+				BufferedImage.TYPE_INT_ARGB);
 		update(image.createGraphics());
 	}
+	
 	
 	/**
 	 * draw the component
@@ -29,40 +31,34 @@ public abstract class Component implements Visible {
 	public abstract void update(Graphics2D g);
 
 
-	@Override
-	public BufferedImage getImage(){
-		return null;
+
+	public BufferedImage getImage() {
+		return image;
 	}
 
-	@Override
-	public int getX(){
+	public int getX() {
 		return x;
 	}
 
-	@Override
-	public int getY(){
+	public int getY() {
 		return y;
 	}
 
-	@Override
-	public int getWidth(){
+	public int getWidth() {
 		return w;
 	}
 
-	@Override
-	public int getHeight(){
+	public int getHeight() {
 		return h;
 	}
 
-	@Override
-	public boolean isAnimated(){
+	public boolean isAnimated() {
+		// TODO Auto-generated method stub
 		return false;
 	}
 
-	@Override
-	public void update(){
+	public void update() {
 		update(image.createGraphics());
-
 	}
 
 }
