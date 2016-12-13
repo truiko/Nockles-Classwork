@@ -22,14 +22,17 @@ public class TextLabel extends Component {
 
 	public void setText(String s){
 		this.text = s;
+		update();
 	}
 
 	public void setSize(int size){
 		this.size = size;
+		update();
 	}
 
 	public void setFont(String font){
 		this.font = font;
+		update();
 	}
 
 
