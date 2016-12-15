@@ -18,6 +18,16 @@ public class Button extends TextLabel implements Clickable{
 		update();
 	}
 
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+		update();
+	}
+
+
 	@Override
 	public void update(Graphics2D g) {
 		g = clear(); // clears image and gets new graphics
@@ -30,7 +40,7 @@ public class Button extends TextLabel implements Clickable{
 		}
 		
 		g.drawRoundRect(0, 0, getWidth(), getHeight(), 25, 35);
-		g.fillRoundRect(0, 0, getWidth(), getHeight(), 25, 35);
+		g.fillRoundRect(0, 0, getWidth()-1, getHeight()-1, 25, 35);
 	}
 
 	@Override
