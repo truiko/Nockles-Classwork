@@ -1,6 +1,9 @@
 package guiPractice.components;
 
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+
+import javax.swing.ImageIcon;
 
 public class Graphic implements Visible {
 
@@ -18,7 +21,29 @@ public class Graphic implements Visible {
 		
 	}
 
-	private void loadImages(String imageLocation, int i, int j) {
+	private void loadImages(String imageLocation, int w, int h) {
+		try{
+			// get the image from file (FULL SIZE)
+			ImageIcon icon = new ImageIcon(imageLocation);
+			
+			if(w == 0 && h == 0){
+				// use original size
+				image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+				// draw icon onto image
+				Graphics2D g = image.createGraphics();
+				g.drawImage(icon.getImage(), 0, 0, null);
+			}else{
+				// use custom size (complete on Monday)
+			}
+			loadedImages = true;
+		}catch(Exception e){
+			//in case file is not found
+			e.printStackTrace();
+		}
+		
+	}
+
+	private void loadImages(String imageLocation, double scale) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -26,31 +51,31 @@ public class Graphic implements Visible {
 	@Override
 	public BufferedImage getImage() {
 		// TODO Auto-generated method stub
-		return null;
+		return image;
 	}
 
 	@Override
 	public int getX() {
 		// TODO Auto-generated method stub
-		return 0;
+		return x;
 	}
 
 	@Override
 	public int getY() {
 		// TODO Auto-generated method stub
-		return 0;
+		return y;
 	}
 
 	@Override
 	public int getWidth() {
 		// TODO Auto-generated method stub
-		return 0;
+		return image.getWidth();
 	}
 
 	@Override
 	public int getHeight() {
 		// TODO Auto-generated method stub
-		return 0;
+		return image.getHeight();
 	}
 
 	@Override
@@ -61,7 +86,7 @@ public class Graphic implements Visible {
 
 	@Override
 	public void update() {
-		// TODO Auto-generated method stub
+		// does nothing, image never changes
 
 	}
 
