@@ -31,12 +31,12 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
 				+ " of the page, a new line is created.");
-		myButton = new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+		new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
 			public void act(){
-				//code for action will be in here.
+			MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
-		});
-		picture = new Graphic(50,50,"resources/sampleImages/cat.jpg");
+			});
+		picture = new Graphic(50,50,.5,"resources/sampleImages/cat.jpg");
 		viewObjects.add(myButton);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
@@ -58,5 +58,11 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 	
 	public MouseMotionListener getMouseMotionListener(){
 		return this;
+	}
+	
+	public void mouseClicked(MouseEvent e){
+		if(myButton.isHovered(e.getX(), e.getY())){
+			myButton.act();
+			}
 	}
 }
