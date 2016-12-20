@@ -18,7 +18,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 
 	private TextLabel label;
 	private TextArea paragraph;
-	private Button myButton;
+	private Button button;
 	private Graphic picture;
 	
 	public CoordinateScreen(int width, int height) {
@@ -32,13 +32,13 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 				"This is a whole paragraph. Notice how "
 				+ "as the paragraph gets to the edge"
 				+ " of the page, a new line is created.");
-		new Button(40,50,100,30,"Button",new Color(0,76,153), new Action(){
+		button = new Button(40,200,80,40,"Button",new Color(0,76,153), new Action(){
 			public void act(){
-			MouseFollower.game.setScreen(MouseFollower.myScreen);
+				MouseFollower.game.setScreen(MouseFollower.myScreen);
 			}
 			});
-		picture = new Graphic(50,50,.5,"resources/sampleImages/cat.jpg");
-		viewObjects.add(myButton);
+		picture = new Graphic(50,50,1.3,"resources/sampleImages/cat.jpg");
+		viewObjects.add(button);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(picture);
@@ -65,10 +65,10 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		return this;
 	}
 	
-	public void mouseClicked(MouseEvent e){
-		if(myButton.isHovered(e.getX(), e.getY())){
-			myButton.act();
-			}
+	public void mouseClicked(MouseEvent m){
+		if(button.isHovered(m.getX(), m.getY())){
+			button.act();
+		}
 	}
 
 	@Override
