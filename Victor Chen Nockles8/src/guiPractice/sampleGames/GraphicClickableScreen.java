@@ -10,7 +10,7 @@ import guiPractice.components.ClickableGraphic;
 import guiPractice.components.Graphic;
 import guiPractice.components.Visible;
 
-public class GraphicClickableScreen extends Screen implements MouseListener {
+public class GraphicClickableScreen extends ClickableScreen implements MouseListener {
 
 	private ClickableGraphic doge;
 	
@@ -27,22 +27,22 @@ public class GraphicClickableScreen extends Screen implements MouseListener {
 		
 	}
 
-	@Override
-	public void initObjects(ArrayList<Visible> viewObjects) {
-		doge = new ClickableGraphic(50,50,1.3,"resources/sampleImages/doge.jpg");
-		doge.setAction(new Action(){
-
-			@Override
-			public void act() {
-				doge.setX(doge.getX() + 10);
-				doge.setY(doge.getY() + 10);
-				
-			}
-			
-		});
-		viewObjects.add(doge);
-		
-	}
+//	@Override
+//	public void initObjects(ArrayList<Visible> viewObjects) {
+//		doge = new ClickableGraphic(50,50,1.3,"resources/sampleImages/doge.jpg");
+//		doge.setAction(new Action(){
+//
+//			@Override
+//			public void act() {
+//				doge.setX(doge.getX() + 10);
+//				doge.setY(doge.getY() + 10);
+//				
+//			}
+//			
+//		});
+//		viewObjects.add(doge);
+//		
+//	}
 	
 	@Override
 	public void mouseEntered(MouseEvent arg0) {
@@ -70,5 +70,22 @@ public class GraphicClickableScreen extends Screen implements MouseListener {
 
 	public MouseListener getMouseListener(){
 		return this;
+	}
+
+	@Override
+	public void initAllObjects(ArrayList<Visible> list) {
+		doge = new ClickableGraphic(50,50,1.3,"resources/sampleImages/doge.jpg");
+		doge.setAction(new Action(){
+
+			@Override
+			public void act() {
+				doge.setX(doge.getX() + 10);
+				doge.setY(doge.getY() + 10);
+				
+			}
+			
+		});
+		list.add(doge);
+		
 	}
 }
