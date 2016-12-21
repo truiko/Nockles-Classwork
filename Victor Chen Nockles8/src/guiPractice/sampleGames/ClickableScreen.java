@@ -29,7 +29,7 @@ public class ClickableScreen extends Screen implements MouseListener {
 
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
-		doge = new ClickableGraphic(100,100,1.3,"resources/sampleImages/doge.jpg");
+		doge = new ClickableGraphic(50,50,1.3,"resources/sampleImages/doge.jpg");
 		doge.setAction(new Action(){
 
 			@Override
