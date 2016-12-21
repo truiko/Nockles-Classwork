@@ -10,11 +10,11 @@ import guiPractice.components.ClickableGraphic;
 import guiPractice.components.Graphic;
 import guiPractice.components.Visible;
 
-public class ClickableScreen extends Screen implements MouseListener {
+public class GraphicClickableScreen extends Screen implements MouseListener {
 
 	private ClickableGraphic doge;
 	
-	public ClickableScreen(int width, int height) {
+	public GraphicClickableScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}

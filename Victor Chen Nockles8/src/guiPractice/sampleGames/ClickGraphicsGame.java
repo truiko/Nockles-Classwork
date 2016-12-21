@@ -4,7 +4,7 @@ import guiPractice.GUIApplication;
 
 public class ClickGraphicsGame extends GUIApplication {
 	
-	public static ClickableScreen screen;
+	public static GraphicClickableScreen screen;
 	public static ClickGraphicsGame game;
 
 	public ClickGraphicsGame() {
@@ -13,7 +13,7 @@ public class ClickGraphicsGame extends GUIApplication {
 
 	@Override
 	protected void initScreen() {
-		screen = new ClickableScreen(getWidth(),
+		screen = new GraphicClickableScreen(getWidth(),
 				getHeight());
 		setScreen(screen);
 	}
