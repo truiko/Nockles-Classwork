@@ -133,4 +133,10 @@ public abstract class Screen {
 	public MouseMotionListener getMouseMotionListener(){
 		return null;
 	}
+
+
+	public void addObject(Visible v) {
+		viewObjects.add(v);
+		
+	}
 }
