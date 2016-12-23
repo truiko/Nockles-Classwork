@@ -139,4 +139,12 @@ public abstract class Screen {
 		viewObjects.add(v);
 		
 	}
+	
+	public int getWidth(){
+		return width;
+	}
+	
+	public int getHeight(){
+		return height;
+	}
 }
