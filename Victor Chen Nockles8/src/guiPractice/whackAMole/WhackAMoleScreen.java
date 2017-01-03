@@ -23,15 +23,15 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 	}
 
 	@Override
-	public void initAllObjects(ArrayList<Visible> list) {
+	public void initAllObjects(ArrayList<Visible> viewObjects) {
 		moles = new ArrayList<MoleInterface>();
 		player = getAPlayer();
 		label = new TextLabel(getWidth()/2-60,getHeight()/2-30,120,60,"Ready...");
 		timeLabel = new TextLabel(getWidth()/2-60,50,120,60,"");
 		
-		addObject(label);
-		addObject(player);
-		addObject(timeLabel);
+		viewObjects.add(label);
+		viewObjects.add(player);
+		viewObjects.add(timeLabel);
 		
 	}
 
@@ -84,10 +84,9 @@ public class WhackAMoleScreen extends ClickableScreen implements Runnable {
 			}
 			timeLeft -= .1;
 			timeLabel.setText(""+(int)(timeLeft*10/10.0));
+			disappearMoles();
+			addNewMoles();
 		}
-		disappearMoles();
-		addNewMoles();
-		
 	}
 
 	private void addNewMoles() {
