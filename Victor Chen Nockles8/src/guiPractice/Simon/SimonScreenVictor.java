@@ -1,7 +1,9 @@
 package guiPractice.Simon;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
+import guiPractice.components.Action;
 import guiPractice.components.Button;
 import guiPractice.components.TextLabel;
 import guiPractice.components.Visible;
@@ -11,6 +13,7 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 	
 	private ProgressInterfaceVictor progress;
 	private ArrayList<MoveInterfaceVictor> moves;
+	private int movesIndex;
 	private ButtonInterfaceVictor[] buttons;
 	private int roundNumber;
 	private int lastSelectedButton;
@@ -64,7 +67,44 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 
 	private void addButtons() {
 		int numberOfButtons = 6;
+		Color[] colors = {Color.BLACK,Color.BLUE,Color.RED,Color.YELLOW,Color.GREEN,Color.ORANGE};
 		
+		for(int i = 0; i < numberOfButtons; i++){
+			final ButtonInterfaceVictor b = getAButton();
+			b.setColor(colors[i]);
+			b.setX((30*i) + 50); 
+			b.setY(80); 
+			
+			b.setAction(new Action(){
+				public void act(){
+					if(validInput){
+						Thread blink = new Thread(new Runnable(){
+							public void run(){
+								b.highlight();
+								try {
+									Thread.sleep(800);
+									b.dim();
+								} catch (InterruptedException e) {
+									// TODO Auto-generated catch block
+									e.printStackTrace();
+								}
+							}
+						});
+						blink.start();
+						if(b == moves.get(movesIndex).getButton()){
+							
+						}
+					}
+				}
+
+				});
+			
+		}
+	}
+
+	private ButtonInterfaceVictor getAButton() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
