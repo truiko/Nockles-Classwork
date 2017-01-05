@@ -92,12 +92,17 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 						});
 						blink.start();
 						if(b == moves.get(movesIndex).getButton()){
-							
+							movesIndex++;
+							progress.gameOver();
+						}
+						if(movesIndex == moves.size()){
+							Thread nextRound = new Thread(SimonScreenVictor.this);
+							nextRound.start();
 						}
 					}
 				}
 
-				});
+				});	
 			
 		}
 	}

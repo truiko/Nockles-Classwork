@@ -4,4 +4,6 @@ import guiPractice.components.Visible;
 
 public interface ProgressInterfaceVictor extends Visible {
 
+	void gameOver();
+
 }
