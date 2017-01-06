@@ -17,7 +17,7 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 	private ButtonInterfaceVictor[] buttons;
 	private int roundNumber;
 	private int lastSelectedButton;
-	private boolean validInput;
+	private boolean acceptingInput;
 	private TextLabel label;
 
 	public SimonScreenVictor(int width, int height) {
@@ -27,13 +27,61 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
+		label.setText("");
+	    nextRound();
+	}
 
+	private void nextRound() {
+		acceptingInput = false;
+		roundNumber++;
+		moves.add(randomMove());
+		progress.setRound(roundNumber);
+		progress.setSequenceSize(moves.size());
+		changeText("Simon's turn");
+		changeText("");
+		playSequence();
+		changeText("Your turn");
+		acceptingInput = true;
+		movesIndex = 0;
+	}
+
+	private void playSequence() {
+		ButtonInterfaceVictor b = null;
+		for(int i = 0; i < moves.size(); i++){
+			if(b != null){
+				b.dim();
+			}
+			b = moves.get(movesIndex).getButton();
+			b.highlight();
+			int sleepTime = (60000/roundNumber);
+			if(sleepTime < 2000){
+				sleepTime = 2000;
+			}
+			try {
+				Thread.sleep(sleepTime);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		b.dim();
+		
+	}
+
+	private void changeText(String s) {
+		try {
+			label.setText(s);
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	@Override
 	public void initAllObjects(ArrayList<Visible> viewObjects) {
-		addButtons();
+		addButtons(viewObjects);
 		progress = getProgress();
 		label = new TextLabel(130,230,300,40,"Let's play Simon!");
 		moves = new ArrayList<MoveInterfaceVictor>();
@@ -65,7 +113,7 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 		return null;
 	}
 
-	private void addButtons() {
+	private void addButtons(ArrayList<Visible> viewObjects) {
 		int numberOfButtons = 6;
 		Color[] colors = {Color.BLACK,Color.BLUE,Color.RED,Color.YELLOW,Color.GREEN,Color.ORANGE};
 		
@@ -77,7 +125,7 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 			
 			b.setAction(new Action(){
 				public void act(){
-					if(validInput){
+					if(acceptingInput){
 						Thread blink = new Thread(new Runnable(){
 							public void run(){
 								b.highlight();
@@ -101,8 +149,9 @@ public class SimonScreenVictor extends ClickableScreen implements Runnable {
 						}
 					}
 				}
-
+				
 				});	
+			viewObjects.add(b);
 			
 		}
 	}
