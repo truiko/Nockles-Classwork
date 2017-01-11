@@ -1,13 +1,18 @@
 package guiPractice.sampleGames;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 import guiPractice.Screen;
 import guiPractice.components.Action;
+import guiPractice.components.AnimatedComponent;
 import guiPractice.components.Button;
 import guiPractice.components.Graphic;
 import guiPractice.components.MovingComponent;
@@ -45,10 +50,42 @@ public class CoordinateScreen extends Screen implements MouseMotionListener, Mou
 		viewObjects.add(paragraph);
 		viewObjects.add(picture);
 		
-		MovingComponent mc = new MovingComponent(30,60,80,80);
-		mc.setVy(3);
-		mc.play();
-		viewObjects.add(mc);
+//		MovingComponent mc = new MovingComponent(30,60,80,80);
+//		mc.setVy(3);
+//		mc.play();
+//		viewObjects.add(mc);
+		
+		addAnimation(viewObjects);
+		
+		
+	}
+
+	private void addAnimation(ArrayList<Visible> viewObjects) {
+		AnimatedComponent a = new AnimatedComponent(40,50,150,150);
+		try{
+			int numberInRow = 2;
+			int rows = 4;
+			int w = 500;
+			int h = 256;
+			ImageIcon icon = new ImageIcon("resources/sampleImages/cat.png");
+			// create a for loop that will take a 
+			// "sub-image" from the sprite grid
+			for(int i = 0; i < numberInRow * rows; i++){
+				// declare the "cropped image"
+				BufferedImage cropped = new BufferedImage(w,h,BufferedImage.TYPE_INT_ARGB);
+				int leftMargin = 0;
+				int topMargin = 0;
+				int x1 = leftMargin + w*(i%numberInRow);
+				int y1 = topMargin + h*(i/numberInRow);
+				Graphics2D g = cropped.createGraphics();
+				g.drawImage(icon.getImage(),50,50,w,h,x1,y1,x1+w,y1+h,null);
+				a.addFrame(cropped, 100);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		viewObjects.add(a);
+		a.play();
 	}
 
 	@Override
