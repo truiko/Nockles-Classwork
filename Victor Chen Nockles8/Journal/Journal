@@ -19,3 +19,6 @@ UPDATE: changing programming language to JAVA instead of javascript.
 		^ tutorial for creating a basic instant messenger in java
 Goal for today/weekend: Watch the 5 videos on the instant messenger program to understand how the program works and how to divide up the roles. 
 RESEARCH: How to make a computer a server host and how to have voice chat in java
+	What I did today: Refocused the group on the new design path. Discussed the differences between Javascript and Java in creating a messenger program. 
+	
+Goal for MONDAY: Start coding the basic messenger system. Have the roles and skills divided among the members. All group members suffficiently understand new concepts and syntax in building a basic instant messenger.
