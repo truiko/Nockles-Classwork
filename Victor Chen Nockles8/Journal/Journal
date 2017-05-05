@@ -3,3 +3,19 @@ Victor Chen
 5/4/17
 Goal for today: Research the necessary parts of making an online chatroom.
 	What I did today: Looked into examples of simple chatrooms online.  
+	
+5/5/17
+Goal for today: Start coding in html to refresh memory. Building a small website with php capabilities.
+
+UPDATE: changing programming language to JAVA instead of javascript.
+		
+		BUT, nockles said that a chatroom itself is too simple
+		MAIN GOAL: Make the Java chatroom have voice capabilities and have it work 					on Vaadin
+		- Vaadin Tutorial is on orcmath
+		https://sites.google.com/site/orcmath/tutorials/vaadin-gae 
+		
+		- Chatroom Tutorial is on thenewboston youtube channel
+		https://www.youtube.com/watch?v=pr02nyPqLBU
+		^ tutorial for creating a basic instant messenger in java
+Goal for today/weekend: Watch the 5 videos on the instant messenger program to understand how the program works and how to divide up the roles. 
+RESEARCH: How to make a computer a server host and how to have voice chat in java
