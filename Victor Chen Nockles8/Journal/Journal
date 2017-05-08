@@ -22,3 +22,7 @@ RESEARCH: How to make a computer a server host and how to have voice chat in jav
 	What I did today: Refocused the group on the new design path. Discussed the differences between Javascript and Java in creating a messenger program. 
 	
 Goal for MONDAY: Start coding the basic messenger system. Have the roles and skills divided among the members. All group members suffficiently understand new concepts and syntax in building a basic instant messenger.
+
+5/8/17
+Goal for today: Research how to add voice in java. Understand how servers and sockets work. 
+What I did today: Discussed the use of Vaadin in our project. Decided that we would build the working java program first and then attempt to port the program to Vaadin/Javascript.
