@@ -17,12 +17,23 @@ UPDATE: changing programming language to JAVA instead of javascript.
 		- Chatroom Tutorial is on thenewboston youtube channel
 		https://www.youtube.com/watch?v=pr02nyPqLBU
 		^ tutorial for creating a basic instant messenger in java
-Goal for today/weekend: Watch the 5 videos on the instant messenger program to understand how the program works and how to divide up the roles. 
+Goal for today/weekend: Watch the 5 videos on the instant messenger program to understand how 
+						the program works and how to divide up the roles. 
 RESEARCH: How to make a computer a server host and how to have voice chat in java
-	What I did today: Refocused the group on the new design path. Discussed the differences between Javascript and Java in creating a messenger program. 
+	What I did today: Refocused the group on the new design path. Discussed the differences 
+					  between Javascript and Java in creating a messenger program. 
 	
-Goal for MONDAY: Start coding the basic messenger system. Have the roles and skills divided among the members. All group members suffficiently understand new concepts and syntax in building a basic instant messenger.
+Goal for MONDAY: Start coding the basic messenger system. Have the roles and skills divided among the members. 
+				 All group members suffficiently understand new concepts and syntax in building a basic instant messenger.
 
 5/8/17
 Goal for today: Research how to add voice in java. Understand how servers and sockets work. 
-What I did today: Discussed the use of Vaadin in our project. Decided that we would build the working java program first and then attempt to port the program to Vaadin/Javascript.
+What I did today: Discussed the use of Vaadin in our project. Decided that we would build the working
+				  java program first and then attempt to port the program to Vaadin/Javascript.
+
+5/9/17
+Goal for today: Research how to add voice in java. Understand how servers and sockets work.
+What I did today: I looked into examples and syntax for voice in java. Need to find a more cohesive tutorial 
+				  to the voice without just copying code. I also continued to watch the basic messenger 
+				  program tutorial on thenewboston youtube channel and wrote code to follow along with it.
+				  The tutorial is almost done with setting up the server side of the program. 
