@@ -37,3 +37,15 @@ What I did today: I looked into examples and syntax for voice in java. Need to f
 				  to the voice without just copying code. I also continued to watch the basic messenger 
 				  program tutorial on thenewboston youtube channel and wrote code to follow along with it.
 				  The tutorial is almost done with setting up the server side of the program. 
+
+5/11/17
+Goal for today: Complete building the Server side groundwork and work on client side groundwork. (All based
+				on java networking tutorial.
+What i did today: I completed building the Serveb side program and it works fine. I split the project into two
+				  different repositories since the server side and client side programs need to be running
+				  at the same time on two computers. I shared that second client repository with the rest
+				  of the group members. I also started the client side code.				  
+				  
+				  
+				  
+				  
