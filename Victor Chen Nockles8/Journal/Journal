@@ -10,7 +10,7 @@ Goal for today: Start coding in html to refresh memory. Building a small website
 UPDATE: changing programming language to JAVA instead of javascript.
 		
 		BUT, nockles said that a chatroom itself is too simple
-		MAIN GOAL: Make the Java chatroom have voice capabilities and have it work 					on Vaadin
+		MAIN GOAL: Make the Java chatroom have voice capabilities and have it work on Vaadin
 		- Vaadin Tutorial is on orcmath
 		https://sites.google.com/site/orcmath/tutorials/vaadin-gae 
 		
@@ -46,6 +46,12 @@ What i did today: I completed building the Serveb side program and it works fine
 				  at the same time on two computers. I shared that second client repository with the rest
 				  of the group members. I also started the client side code.				  
 				  
-				  
+5/12/17
+Goal for today: Complete building Client side of program and research more on how to add voice to java.
+What I did today: I completed the client side of the program and straightened out the group skills/subgroups.
+				Veeraj and I will present networking through video and voice chat respectively. Mahin and
+				Gabriel will present reading files and uploading files through the chat program. Finally,
+				Joyce will present database through SQL/PHP coding by saving the messages and/or the pictures
+				depending on if it is possible to save image objects to PHPMyAdmin.
 				  
 				  
