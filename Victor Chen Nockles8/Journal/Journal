@@ -53,5 +53,12 @@ What I did today: I completed the client side of the program and straightened ou
 				Gabriel will present reading files and uploading files through the chat program. Finally,
 				Joyce will present database through SQL/PHP coding by saving the messages and/or the pictures
 				depending on if it is possible to save image objects to PHPMyAdmin.
+				
+5/13/17
+Goal for today: Attempt to connect the program using two different computers.
+				Research syntax for voice chat in Java.
+What I did today: After attempting to connect two computers where one was a server and the other was a client, 				  the connection was refused. Nockles explained that this was because the school connection 				  				  has a fire wall that blocks direct connections. This means that when we present/test the 				  			      program, our own computers and hotspots must be used. Additionally, the focus of the voice 
+				  chat part of the program is tied with the Java Sound API. This means that I will have to
+				  find a tutorial for Java Sound and recording/streaming. 
 				  
 				  
