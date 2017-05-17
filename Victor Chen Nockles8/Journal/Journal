@@ -67,5 +67,13 @@ What I did today: I did research more on voice chat in Java but there is a lot o
 				  I also created separate branches for each of the group members. There isn't enough time for this symposium when
 				  we are already so focused on finishing AP's and doing other classes final projects. 
 
-				  
+5/17/17
+Goal for today: Research more on voice chat in Java.
+What I did today: I took classes from a github repository. Although I did copy pasta, the code is 
+				  specifically to learn how to use the Java sound API. I think I understand the basic structure
+				  of how Java takes in audio and how java reads audio. The issue lies in that I do not
+				  know how to write that code myself. I am afraid that this project may be too much of a reach
+				  to the point where I only vaguely understand the code and just copy what I see. I will try
+				  to implement this fuctionality in the client/server class I already built.
+							  
 				  
