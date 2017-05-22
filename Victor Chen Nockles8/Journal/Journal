@@ -75,5 +75,15 @@ What I did today: I took classes from a github repository. Although I did copy p
 				  know how to write that code myself. I am afraid that this project may be too much of a reach
 				  to the point where I only vaguely understand the code and just copy what I see. I will try
 				  to implement this fuctionality in the client/server class I already built.
+				  
+5/22/17
+Goal for today: Understand voice syntax well enough to start coding basic samples of voice to send.
+What I did today: Today I looked into Java Sound API even more. I still don't understand how to syntax works. 
+				  Judging by the lack of progress, our group will most likely not be able to have any 
+				  substantial work to present. We will still attempt to make progress individually and if
+				  there is a breakthrough then we can see what we can do. I think I was too ambitious with
+				  the project. I'll see if I can tone down the difficulty of the skill so that it may be
+				  something along the lines of sending a voice message rather than sending streams of voice
+				  data packets.
 							  
 				  
