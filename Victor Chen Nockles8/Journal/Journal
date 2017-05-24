@@ -96,6 +96,14 @@ What I did today: Today I started implementing voice into the chat program. I ad
 				  with the voice program. Testing on computers other than the school computers is still
 				  necessary. Meanwhile, Veeraj's login client does not work with the current messenger system.
 				  After logging in, the client JFrame is blank. I tried to fix it, but could not find a 
-				  solution. I will also look into JFrame interference between the two programs. 
+				  solution. I will also look into JFrame interference between the two programs.
+				  
+5/24/17
+Goal for today: Try to fix the unsupported line error.
+				What I did today: Rebuilt the MicThread class to suit the already build client. The AudioFormat
+				is still an issue because the line is unsupported. Not sure how to fix this error. I will look 
+				more into the error online but I think that I understand the groundwork for building a sound 
+				data from the mic. 		  
+			 
 									  
 				  
