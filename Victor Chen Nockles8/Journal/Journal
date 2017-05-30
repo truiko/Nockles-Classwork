@@ -113,5 +113,9 @@ What I did today: Nockles helped me understand what was causing the error. The l
 				of the program that accepts voice and plays it on the receiver's end. Veeraj and Mahin's
 				parts work for the most part so a part of June will be spent merging the programs together. 
 			 
-									  
+5/26/17
+Goal for today: Build input part of voice chat.
+What I did today: Today I worked on the input part of the client. I am not done with accepting inputs yet.
+				  So far, I created a message arrayList for the sound packets. I still have to decompress
+				  the soundpackets and output the soundpackets to the speaker. 
 				  
