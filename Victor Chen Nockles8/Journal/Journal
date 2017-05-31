@@ -113,9 +113,17 @@ What I did today: Nockles helped me understand what was causing the error. The l
 				of the program that accepts voice and plays it on the receiver's end. Veeraj and Mahin's
 				parts work for the most part so a part of June will be spent merging the programs together. 
 			 
-5/26/17
+5/30/17
 Goal for today: Build input part of voice chat.
 What I did today: Today I worked on the input part of the client. I am not done with accepting inputs yet.
 				  So far, I created a message arrayList for the sound packets. I still have to decompress
 				  the soundpackets and output the soundpackets to the speaker. 
 				  
+5/31/17
+Goal for today: Finish building accepting inputs.
+What I did today: Today i finished building the methods for accepting voice but now I have to figure out
+				  how to make the program send more than just strings. The base program was built on strings
+				  so I will have to add object/byte sending capabilities. Both sides of the program, server
+				  and client, have the appropriate methods and GUI for voice. Merging between other members
+				  has started. Joyce and Veeraj have matching branches now since their skills are most similar.
+				  			  
