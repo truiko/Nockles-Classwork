@@ -126,4 +126,12 @@ What I did today: Today i finished building the methods for accepting voice but 
 				  so I will have to add object/byte sending capabilities. Both sides of the program, server
 				  and client, have the appropriate methods and GUI for voice. Merging between other members
 				  has started. Joyce and Veeraj have matching branches now since their skills are most similar.
+				  
+6/1/17
+Goal for today: Allow cross compatibility between the voice program and the text program.
+What I did today: I changed all the instances of Strings being sent to an instance of the message
+				  class. The message object class takes in both voice packets and objects. Since
+				  Strings are objects, the object class will take in strings. The strings are
+				  then accessed through a getter. This allows the same methods to send and show
+				  messages for both the strings and voice parts of the program. 
 				  			  
