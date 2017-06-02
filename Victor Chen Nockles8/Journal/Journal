@@ -134,4 +134,13 @@ What I did today: I changed all the instances of Strings being sent to an instan
 				  Strings are objects, the object class will take in strings. The strings are
 				  then accessed through a getter. This allows the same methods to send and show
 				  messages for both the strings and voice parts of the program. 
+				  
+6/2/17
+Goal for today: Merge branches with the rest of the group.
+What I did today: I merged my branch with Joyce's and Veeraj's branches. There were a couple 
+				  merge conflicts because I intend to use the message object class instead of
+				  just the string methods in the master branch. I fixed the merge conflicts and
+				  text part of the project works fine. I still have to test the voice and net-
+				  working on non school computers and figure out whether to use private or public
+				  ip addresses.
 				  			  
