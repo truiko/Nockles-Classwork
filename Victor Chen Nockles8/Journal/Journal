@@ -143,4 +143,17 @@ What I did today: I merged my branch with Joyce's and Veeraj's branches. There w
 				  text part of the project works fine. I still have to test the voice and net-
 				  working on non school computers and figure out whether to use private or public
 				  ip addresses.
+		
+6/5/17
+Goal for today: Fix issue with voice
+What I did today: I am still working on fixing the error. The console says that the connection closed/reset from the server side. 
+				  I will double check if I missed anything. One thing I noticed was that the program was not listening for voice
+				  so I moved it into the whilechatting method. That might be causing the error though because the program
+				  is listening for voice and other inputs at the same time.
+				  
+6/7/17
+Goal for today: Was to fix issue with voice still
+What I did today: Told Nockles that the group would not be able to present at the symposium. He told us that if the group could 
+				  not be at the symposium, the program would have to work and exceed expectations. Right now, out main
+				  goal is to just have a working program. Functionality and aestetics are the most important.
 				  			  
